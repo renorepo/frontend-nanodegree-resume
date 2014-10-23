@@ -22,6 +22,8 @@ var bio = {
     "pictureURL": "http://static.comicvine.com/uploads/original/12/125032/2945116-jon_snow.jpg"
 }
 
+
+
 var education ={
     "schools": [
         {
@@ -95,4 +97,14 @@ var work = {
         }
 
     ]
+}
+
+if(bio.skills.length > 0) {
+    $("#header").append(HTMLskillsStart);
+    for(i = 0; i < bio.skills.length; i++){
+        var skill = bio.skills[i];
+        var formattedSkills = HTMLskills.replace("%data%", skill);
+        console.log(formattedSkills);
+        $("#header").append(formattedSkills);
+    }
 }
